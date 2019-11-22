@@ -33,17 +33,46 @@ class m191122_013421_init extends Migration
         ], $tableOptions);
 
         $this->insert('user', [
-            'username'=> 'admin',
-            'firstname'=> 'Admin',
-            'lastname'=> '',
-            'auth_key'=> \Yii::$app->security->generateRandomString(),
-            'password_hash'=> \Yii::$app->getSecurity()->generatePasswordHash('123456'),
-            'password_reset_token'=> NULL,
-            'created_at' => strtotime(date('Y-m-d H:i:s')),
-            'updated_at' => strtotime(date('Y-m-d H:i:s')),
-            'email'=> 'sholihatwarda@gmail.com',
-            'status'=> 10,
-        ]);
+                'username'=> 'manajemen',
+                'firstname'=> 'Manajemen',
+                'lastname'=> '',
+                'auth_key'=> \Yii::$app->security->generateRandomString(),
+                'password_hash'=> \Yii::$app->getSecurity()->generatePasswordHash('123456'),
+                'password_reset_token'=> NULL,
+                'created_at' => strtotime(date('Y-m-d H:i:s')),
+                'updated_at' => strtotime(date('Y-m-d H:i:s')),
+                'email'=> 'manajemen@tes.mkom',
+                'status'=> 10,
+            ]
+        );
+        
+        $this->insert('user', [
+                'username'=> 'administrator',
+                'firstname'=> 'Administrator',
+                'lastname'=> '',
+                'auth_key'=> \Yii::$app->security->generateRandomString(),
+                'password_hash'=> \Yii::$app->getSecurity()->generatePasswordHash('123456'),
+                'password_reset_token'=> NULL,
+                'created_at' => strtotime(date('Y-m-d H:i:s')),
+                'updated_at' => strtotime(date('Y-m-d H:i:s')),
+                'email'=> 'admin@tes.mkom',
+                'status'=> 20,
+            ]
+        );
+        
+        $this->insert('user', [
+                'username'=> 'peminjam',
+                'firstname'=> 'Peminjam',
+                'lastname'=> '',
+                'auth_key'=> \Yii::$app->security->generateRandomString(),
+                'password_hash'=> \Yii::$app->getSecurity()->generatePasswordHash('123456'),
+                'password_reset_token'=> NULL,
+                'created_at' => strtotime(date('Y-m-d H:i:s')),
+                'updated_at' => strtotime(date('Y-m-d H:i:s')),
+                'email'=> 'peminjam@tes.mkom',
+                'status'=> 30,
+            ]
+        );
     }
 
     public function down()

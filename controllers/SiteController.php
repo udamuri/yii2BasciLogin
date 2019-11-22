@@ -9,6 +9,7 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\User;
 
 class SiteController extends Controller
 {
@@ -20,10 +21,10 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout', 'about'],
+                'only' => ['logout'],
                 'rules' => [
                     [
-                        'actions' => ['logout', 'about'],
+                        'actions' => ['logout'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -61,7 +62,10 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        
+        return $this->render('index', [
+            'user_status' => User::isUserStatus(Yii::$app->user->identity->username)
+        ]);
     }
 
     /**
